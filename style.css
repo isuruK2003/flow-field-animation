@@ -15,16 +15,20 @@ canvas {
 }
 
 button {
-    font-size: inherit;
-    padding: 4px 8px;
-    background-color: dodgerblue;
-    color: #fff;
+    font: inherit;
     border: none;
-    background: linear-gradient(rgb(54, 135, 216), rgb(9, 88, 166));
     cursor: pointer;
+    background-color: inherit;
 }
 
-.controller {
+.button-std {
+    color: #fff;
+    background-color: dodgerblue;
+    background: linear-gradient(rgb(54, 135, 216), rgb(9, 88, 166));
+    padding: 4px 8px;
+}
+
+.menu {
     background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
     opacity: 5%;
@@ -36,14 +40,38 @@ button {
     position: fixed;
     bottom: 0;
     right: 0;
+}
 
+.menu:hover {
+    opacity: 100%;
+}
+
+.menu-pinned {
+    opacity: 100%;
+}
+
+.flex {
     display: flex;
+}
+
+.flex-col {
     flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.items-start {
     align-items: start;
 }
 
-.controller:hover {
-    opacity: 100%;
+.items-end {
+    align-items: end;
+}
+
+.content-space-between {
+    justify-content: space-between;
 }
 
 .grid-200-100 {
@@ -66,4 +94,13 @@ button {
 
 .w-100p {
     width: 100%;
+}
+
+.text-underline {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.text-bold {
+    font-weight: bold;
 }

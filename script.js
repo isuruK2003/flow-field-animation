@@ -128,6 +128,8 @@ class Canvas {
 
 function main() {
 
+    const menuElem = document.getElementById("menu");
+    const pinElem = document.getElementById("pin");
     const noOfParticlesElem = document.getElementById("no-of-particles");
     const cellSizeElem = document.getElementById("cell-size");
     const curveElem = document.getElementById("curve");
@@ -140,6 +142,7 @@ function main() {
     let curve = 0.8;
     let zoom = 0.04;
 
+    let hasMenuPinned = false;
     let hasStarted = true
 
     let canvas = new Canvas("canvas", window.innerWidth - 1, window.innerHeight - 1);
@@ -178,6 +181,15 @@ function main() {
             startStopElem.innerHTML = "Stop";
         }
         hasStarted = !hasStarted;
+    });
+
+    pinElem.addEventListener("click", () => {
+        if (!hasMenuPinned) {
+            menuElem.classList.add("menu-pinned");
+        } else {
+            menuElem.classList.remove("menu-pinned");
+        }
+        hasMenuPinned = !hasMenuPinned;
     });
 
     window.addEventListener("resize", () => {
